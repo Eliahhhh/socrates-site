@@ -14,9 +14,25 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "Socrates in the Heights | Authentic Greek Food in Burnaby",
+  metadataBase: new URL("https://socratesintheheights.ca"),
+  title: "Socrates in the Heights | Authentic Greek Food in Burnaby, BC",
   description:
-    "Family-run Greek takeout and catering in Burnaby, BC. Fresh souvlaki, roasted lamb, and traditional Greek dishes made daily.",
+    "Family-run Greek restaurant in Burnaby serving fresh souvlaki, roasted lamb, moussaka, and traditional Greek dishes. Takeout, delivery, and catering available. Call (604) 299-3777.",
+  keywords:
+    "Greek restaurant Burnaby, souvlaki Burnaby, Greek food Burnaby, Greek takeout Burnaby, Socrates in the Heights, Greek catering Burnaby",
+  openGraph: {
+    title: "Socrates in the Heights | Authentic Greek Food in Burnaby",
+    description:
+      "Fresh souvlaki, roasted lamb, and traditional Greek dishes. Family-run takeout in Burnaby, BC.",
+    url: "https://socratesintheheights.ca",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://socratesintheheights.ca",
+  },
 };
 
 export default function RootLayout({
@@ -26,6 +42,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${playfair.variable} ${lato.variable}`}>
+      <head>
+        {/* "restaurant" is a Facebook Open Graph object type, not in Next's
+            built-in OpenGraphType union, so it's rendered directly here. */}
+        <meta property="og:type" content="restaurant" />
+      </head>
       <body className="bg-cream text-navy font-body antialiased">
         {children}
       </body>

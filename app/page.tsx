@@ -8,9 +8,32 @@ const PHONE_TEL = "tel:6042993777";
 const INSTAGRAM_URL = "https://instagram.com/socratesintheheights";
 const FACEBOOK_URL = "https://www.facebook.com/socratesintheheights";
 
+const restaurantJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  name: "Socrates in the Heights",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "4651 Hastings St",
+    addressLocality: "Burnaby",
+    addressRegion: "BC",
+    postalCode: "V5C 2K6",
+    addressCountry: "CA",
+  },
+  telephone: "604-299-3777",
+  servesCuisine: "Greek",
+  priceRange: "$$",
+  openingHours: ["Mo-Fr 11:00-21:00", "Sa-Su 16:00-21:00"],
+  url: "https://socratesintheheights.ca",
+};
+
 export default function Home() {
   return (
     <div id="top">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(restaurantJsonLd) }}
+      />
       <Navbar />
 
       {/* Delivery info banner */}
