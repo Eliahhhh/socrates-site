@@ -9,37 +9,52 @@ export type MenuCategory = {
   items: MenuItem[];
 };
 
-export const featuredDishes: (MenuItem & { description: string })[] = [
+export const featuredDishes: (MenuItem & { description: string; image: string })[] = [
   {
     name: "Chicken Souvlaki",
     price: "$19",
     description: "Grilled chicken skewers with rice, roasted potatoes, Greek salad, tzatziki & pita.",
+    image: "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80",
   },
   {
     name: "Roast Lamb",
     price: "$26",
     description: "Slow-roasted lamb, a Socrates family recipe passed down for generations.",
+    image: "https://images.unsplash.com/photo-1529042410759-befb1204b468?w=600&q=80",
   },
   {
     name: "Lamb Chops",
     price: "$28",
     description: "Char-grilled lamb chops served with all the traditional sides.",
+    image: "https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=600&q=80",
   },
   {
     name: "Greek Appy Platter",
     price: "$40",
     description: "A generous sharing platter of our favourite starters — perfect for the table.",
+    image: "https://images.unsplash.com/photo-1515443961218-a51367888e4b?w=600&q=80",
   },
   {
     name: "Family Style Souvlaki Dinner",
     price: "$68",
     description: "A feast built for the whole family, straight from our kitchen to yours.",
+    image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80",
   },
   {
     name: "Greek Yogurt Cheesecake",
     price: "$8",
     description: "Creamy, tangy, and made fresh in-house — the perfect finish.",
+    image: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600&q=80",
   },
+];
+
+export const galleryImages: string[] = [
+  "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80",
+  "https://images.unsplash.com/photo-1529042410759-befb1204b468?w=800&q=80",
+  "https://images.unsplash.com/photo-1515443961218-a51367888e4b?w=800&q=80",
+  "https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=800&q=80",
+  "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80",
+  "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=800&q=80",
 ];
 
 export const menu: MenuCategory[] = [

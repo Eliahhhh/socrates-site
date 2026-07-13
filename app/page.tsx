@@ -1,7 +1,7 @@
 import Navbar from "./components/Navbar";
 import ContactForm from "./components/ContactForm";
 import { FacebookIcon, InstagramIcon } from "./components/SocialIcons";
-import { featuredDishes, menu } from "./data/menu";
+import { featuredDishes, galleryImages, menu } from "./data/menu";
 
 const PHONE_DISPLAY = "(604) 299-3777";
 const PHONE_TEL = "tel:6042993777";
@@ -88,19 +88,50 @@ export default function Home() {
             {featuredDishes.map((dish) => (
               <div
                 key={dish.name}
-                className="rounded-lg border border-navy/10 bg-white/60 p-6 shadow-sm transition-shadow hover:shadow-md"
+                className="overflow-hidden rounded-lg border border-navy/10 bg-white/60 shadow-sm transition-shadow hover:shadow-md"
               >
-                <div className="flex items-start justify-between gap-4">
-                  <h3 className="font-display text-xl font-bold text-navy">
-                    {dish.name}
-                  </h3>
-                  <span className="whitespace-nowrap font-display text-xl font-bold text-gold">
-                    {dish.price}
-                  </span>
+                <div className="overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={dish.image}
+                    alt={dish.name}
+                    className="h-48 w-full object-cover transition-transform duration-300 hover:scale-105"
+                  />
                 </div>
-                <p className="mt-3 text-sm leading-relaxed text-navy/70">
-                  {dish.description}
-                </p>
+                <div className="p-6">
+                  <div className="flex items-start justify-between gap-4">
+                    <h3 className="font-display text-xl font-bold text-navy">
+                      {dish.name}
+                    </h3>
+                    <span className="whitespace-nowrap font-display text-xl font-bold text-gold">
+                      {dish.price}
+                    </span>
+                  </div>
+                  <p className="mt-3 text-sm leading-relaxed text-navy/70">
+                    {dish.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Food gallery */}
+      <section className="bg-cream px-4 pb-20 sm:px-6">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {galleryImages.map((src, index) => (
+              <div
+                key={src}
+                className="overflow-hidden rounded-lg shadow-sm"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={src}
+                  alt={`Socrates in the Heights food photo ${index + 1}`}
+                  className="h-64 w-full object-cover transition-transform duration-300 hover:scale-105"
+                />
               </div>
             ))}
           </div>
