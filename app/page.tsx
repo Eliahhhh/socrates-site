@@ -1,5 +1,7 @@
 import Navbar from "./components/Navbar";
 import ContactForm from "./components/ContactForm";
+import FadeIn from "./components/FadeIn";
+import MenuCategories from "./components/MenuCategories";
 import { FacebookIcon, InstagramIcon } from "./components/SocialIcons";
 import { featuredDishes, galleryImages, menu } from "./data/menu";
 
@@ -172,36 +174,7 @@ export default function Home() {
               Full Menu
             </h2>
           </div>
-          <div className="grid grid-cols-1 gap-x-12 gap-y-14 md:grid-cols-2">
-            {menu.map((category) => (
-              <div key={category.title}>
-                <h3 className="border-b-2 border-gold pb-2 font-display text-2xl font-bold text-gold">
-                  {category.title}
-                </h3>
-                {category.note && (
-                  <p className="mt-2 text-xs italic text-cream/60">
-                    {category.note}
-                  </p>
-                )}
-                <ul className="mt-4 flex flex-col gap-3">
-                  {category.items.map((item) => (
-                    <li
-                      key={item.name}
-                      className="flex items-baseline gap-2 text-cream/90"
-                    >
-                      <span className="text-sm sm:text-base">
-                        {item.name}
-                      </span>
-                      <span className="flex-1 border-b border-dotted border-cream/25" />
-                      <span className="font-semibold text-gold">
-                        {item.price}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+          <MenuCategories menu={menu} />
 
           <div className="mx-auto mt-16 max-w-xl rounded-lg border border-gold/30 bg-cream/5 px-6 py-5 text-center">
             <p className="text-sm text-cream/90 sm:text-base">
@@ -217,7 +190,7 @@ export default function Home() {
 
       {/* About */}
       <section id="about" className="bg-cream px-4 py-20 sm:px-6">
-        <div className="mx-auto max-w-3xl text-center">
+        <FadeIn className="mx-auto max-w-3xl text-center">
           <p className="font-display text-sm font-bold uppercase tracking-[0.2em] text-gold">
             Our Story
           </p>
@@ -239,7 +212,7 @@ export default function Home() {
               events. Contact us to discuss your next event.
             </p>
           </div>
-        </div>
+        </FadeIn>
       </section>
 
       {/* Order */}
