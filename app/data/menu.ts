@@ -48,15 +48,6 @@ export const featuredDishes: (MenuItem & { description: string; image: string })
   },
 ];
 
-export const galleryImages: string[] = [
-  "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80",
-  "https://images.unsplash.com/photo-1529042410759-befb1204b468?w=800&q=80",
-  "https://images.unsplash.com/photo-1515443961218-a51367888e4b?w=800&q=80",
-  "https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=800&q=80",
-  "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80",
-  "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=800&q=80",
-];
-
 export const menu: MenuCategory[] = [
   {
     title: "Starters",

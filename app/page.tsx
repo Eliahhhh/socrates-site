@@ -3,7 +3,7 @@ import ContactForm from "./components/ContactForm";
 import FadeIn from "./components/FadeIn";
 import MenuCategories from "./components/MenuCategories";
 import { FacebookIcon, InstagramIcon } from "./components/SocialIcons";
-import { featuredDishes, galleryImages, menu } from "./data/menu";
+import { featuredDishes, menu } from "./data/menu";
 
 const PHONE_DISPLAY = "(604) 299-3777";
 const PHONE_TEL = "tel:6042993777";
@@ -51,7 +51,7 @@ export default function Home() {
         className="relative flex min-h-screen items-center justify-center bg-cover bg-center text-center"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(27,42,74,0.65), rgba(27,42,74,0.75)), url('https://images.unsplash.com/photo-1544025162-d76694265947?w=1600&q=80')",
+            "radial-gradient(ellipse at center, rgba(27,42,74,0.88) 0%, rgba(27,42,74,0.7) 35%, rgba(27,42,74,0.35) 65%, rgba(27,42,74,0.15) 100%), url('https://images.unsplash.com/photo-1544025162-d76694265947?w=1600&q=80')",
         }}
       >
         <div className="mx-auto max-w-3xl px-4 py-32 text-cream sm:px-6">
@@ -136,27 +136,6 @@ export default function Home() {
                     {dish.description}
                   </p>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Food gallery */}
-      <section className="bg-cream px-4 pb-20 sm:px-6">
-        <div className="mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {galleryImages.map((src, index) => (
-              <div
-                key={src}
-                className="overflow-hidden rounded-lg shadow-sm"
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={src}
-                  alt={`Socrates in the Heights food photo ${index + 1}`}
-                  className="h-64 w-full object-cover transition-transform duration-300 hover:scale-105"
-                />
               </div>
             ))}
           </div>
